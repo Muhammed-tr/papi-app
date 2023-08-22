@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      
+      "passStatus": true,
+      "egmStatus": true,
+      "fingerPrintStatus": true,
+      "succesStatus": true,
+      "title": "ie",
+      "images": "https://media.istockphoto.com/id/1142192548/tr/vekt%C3%B6r/adam-avatar-profili-erkek-y%C3%BCz-siluet-veya-simge-beyaz-arka-planda-izole-vekt%C3%B6r-illustration.jpg?s=612x612&w=0&k=20&c=-halrTQu_4WSXzF4qREPLl9KWRi7RG5X6Du_isNY7vc=",
+      "imagesdef": "https://media.istockphoto.com/id/1298261537/tr/vekt%C3%B6r/bo%C5%9F-adam-profil-kafas%C4%B1-simge-yer-tutucu.jpg?s=612x612&w=0&k=20&c=RM2Xo5rrLY3c_mWdZUx-JoDeKHr3j5KrueZPjvscQjI="
+    },
+    {
+      "id": 2,
+      
+      "passStatus": false,
+      "egmStatus": true,
+      "fingerPrintStatus": true,
+      "succesStatus": false,
+      "title": "es",
+      "images": "https://media.istockphoto.com/id/1142192548/tr/vekt%C3%B6r/adam-avatar-profili-erkek-y%C3%BCz-siluet-veya-simge-beyaz-arka-planda-izole-vekt%C3%B6r-illustration.jpg?s=612x612&w=0&k=20&c=-halrTQu_4WSXzF4qREPLl9KWRi7RG5X6Du_isNY7vc=",
+      "imagesdef": "https://media.istockphoto.com/id/1298261537/tr/vekt%C3%B6r/bo%C5%9F-adam-profil-kafas%C4%B1-simge-yer-tutucu.jpg?s=612x612&w=0&k=20&c=RM2Xo5rrLY3c_mWdZUx-JoDeKHr3j5KrueZPjvscQjI="
+    },
+    {
+      "id": 3,
+      
+      "passStatus": true,
+      "egmStatus": false,
+      "fingerPrintStatus": true,
+      "succesStatus": false,
+      "title": "Ai",
+      "images": "https://media.istockphoto.com/id/1142192548/tr/vekt%C3%B6r/adam-avatar-profili-erkek-y%C3%BCz-siluet-veya-simge-beyaz-arka-planda-izole-vekt%C3%B6r-illustration.jpg?s=612x612&w=0&k=20&c=-halrTQu_4WSXzF4qREPLl9KWRi7RG5X6Du_isNY7vc=",
+      "imagesdef": "https://media.istockphoto.com/id/1298261537/tr/vekt%C3%B6r/bo%C5%9F-adam-profil-kafas%C4%B1-simge-yer-tutucu.jpg?s=612x612&w=0&k=20&c=RM2Xo5rrLY3c_mWdZUx-JoDeKHr3j5KrueZPjvscQjI="
+    },
+    {
+      "id": 4,
+      
+      "passStatus": true,
+      "egmStatus": true,
+      "fingerPrintStatus": false,
+      "succesStatus": false,
+      "title": "Vei",
+      "images": "https://media.istockphoto.com/id/1142192548/tr/vekt%C3%B6r/adam-avatar-profili-erkek-y%C3%BCz-siluet-veya-simge-beyaz-arka-planda-izole-vekt%C3%B6r-illustration.jpg?s=612x612&w=0&k=20&c=-halrTQu_4WSXzF4qREPLl9KWRi7RG5X6Du_isNY7vc=",
+      "imagesdef": "https://media.istockphoto.com/id/1298261537/tr/vekt%C3%B6r/bo%C5%9F-adam-profil-kafas%C4%B1-simge-yer-tutucu.jpg?s=612x612&w=0&k=20&c=RM2Xo5rrLY3c_mWdZUx-JoDeKHr3j5KrueZPjvscQjI="
+    }
+    
+    
+  ]
