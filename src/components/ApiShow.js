@@ -3,10 +3,10 @@ import Banner from './Banner';
 
 export default function ApiShow() {
     const [responses, setResponses] = useState([]);
-    const [currentResponse, setCurrentResponse] = useState(null); // Son alınan cevabı saklamak için
+    const [currentResponse, setCurrentResponse] = useState(null); // Son alınan cevabı saklamak için currentresponse
 
     const fetchData = () => {
-        fetch('http://localhost:3000/respons1')
+        fetch('http://localhost:3000/respons1') // get isteği
             .then((res) => res.json())
             .then((result) => {
                 setCurrentResponse(result); // Yeni çıktıyı güncelle
@@ -14,7 +14,7 @@ export default function ApiShow() {
     };
 
     useEffect(() => {
-        fetchData(); // İlk çağrıyı yap
+       // fetchData(); // İlk çağrıyı yap
         const interval = setInterval(() => {
             fetchData(); // Her 3 saniyede bir çağrıyı tekrarla
         }, 3000);
@@ -24,7 +24,7 @@ export default function ApiShow() {
         };
     }, []);
 
-    useEffect(() => {
+    useEffect(() => {// currentResponse durumundaki değişiklikleri izler ve yeni yanıtı dizinin başına ekleyerek responses durumunu günceller.
         if (currentResponse) {
             setResponses((prevResponses) => [currentResponse, ...prevResponses]);
         }
