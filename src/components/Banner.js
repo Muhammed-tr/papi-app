@@ -1,6 +1,5 @@
 //prop olarak gelen kullanıcı bilgilerine göre yerleştirme yap
-// görselin sayfa ilk render edildiğinde default olarak ayarlanan görsel olarak ayarla daha
- //sornasında butona ekledğinde kişini bilgileri gelecek şekilde güncellle
+
  import React from 'react'
  import classNames from 'classnames'
  // import { useState } from 'react'
@@ -15,7 +14,7 @@
  
          <div className=''>
  
-             <div className='border border-red-500 md:p-4 p-1 justify-center items-center'>
+             <div className='border border-gray-300 md:p-4 p-1 justify-center items-center'>
  
  
                  <div className=''>
@@ -25,7 +24,7 @@
  
                      <div className=''>
                      
-                         {show === false ? (
+                         {show === true ? (
                              <img className='scale-75 border  ' src={props.post_imagesdef} alt="" />
                          ) : (
                              <img className='scale-75 border  ' src={props.post_images} alt="" />

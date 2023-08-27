@@ -1,59 +1,60 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Banner from './Banner';
+import { useApiContext } from '../context/ApiContext'; // Hook'u içe aktar
 
 export default function ApiShow() {
-    const [responses, setResponses] = useState([]);
-    const [currentResponse, setCurrentResponse] = useState(null); // Son alınan cevabı saklamak için currentresponse
-
-    const fetchData = () => {
-        fetch('http://localhost:3000/respons1') // get isteği
+    // ApiContext'ten gerekli değerleri al
+    const { responses, addResponseToResponses, apiShowActive, resetResponse } = useApiContext();
+   
+    // Komponent yüklendiğinde ve apiShowActive durumu değiştiğinde çalışacak işlev
+    useEffect(() => {
+      // apiShowActive durumu true ise
+      if (apiShowActive) {
+        // API'den veri çekme işlevi
+        const fetchData = () => {
+          fetch('http://localhost:3000/respons1')
             .then((res) => res.json())
             .then((result) => {
-                setCurrentResponse(result); // Yeni çıktıyı güncelle
+              addResponseToResponses(result); // Yeni cevapları cevaplar dizisine ekle
             });
-    };
-
-    useEffect(() => {
-       // fetchData(); // İlk çağrıyı yap
-        const interval = setInterval(() => {
-            fetchData(); // Her 3 saniyede bir çağrıyı tekrarla
-        }, 3000);
-
-        return () => {
-            clearInterval(interval); // Komponent çözüldüğünde interval'i temizle
         };
-    }, []);
+  
+        fetchData(); // İlk veri çekme işlemi
 
-    useEffect(() => {// currentResponse durumundaki değişiklikleri izler ve yeni yanıtı dizinin başına ekleyerek responses durumunu günceller.
-        if (currentResponse) {
-            setResponses((prevResponses) => [currentResponse, ...prevResponses]);
+        // Komponent temizlendiğinde yapılacak temizlik işlemleri
+        return () => {
+            // İhtiyaca göre temizlik işlemleri burada yapılabilir
+          };
         }
-    }, [currentResponse]);
+      }, [apiShowActive]); // apiShowActive durumu değiştiğinde işlemin tekrarlanmasını sağlar
 
+    // Ekranda hep en güncel 4 lüyü göstermek için
+    const lastFourResponses = responses.slice(0, 4);
+  console.log(lastFourResponses)
     return (
-        <>
-            <div className='border flex-row border-black '>
-                <ul className="grid grid-cols-4 gap-y-6 border border-red">
-                    {responses.map((responseList, index) => (
-                        <li className="post" key={index}>
-                            {responseList.map((post) => (
-                                <Banner
-                                    key={post.id}
-                                    post_images={post.images}
-                                    post_imagesdef={post.imagesdef}
-                                    post_passStatus={post.passStatus}
-                                    post_egmStatus={post.egmStatus}
-                                    post_fingerPrintStatus={post.fingerPrintStatus}
-                                    post_succesStatus={post.succesStatus}
-                                />
-                            ))}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <div className='flex p-6 justify-center items-center'>
-             
-            </div>
-        </>
+      //     apiden gelenleri mapleyip bannera prop geçme
+      <>  
+        <div className='border flex-row border-black '>
+          <button onClick={resetResponse}>Reset Button</button>
+          <ul className="grid grid-cols-4 gap-y-6 border border-red">
+            
+            {lastFourResponses.map((responseList, index) => (
+              <li className="post" key={index}>
+                {responseList.map((post) => (
+                  <Banner
+                    key={post.id}
+                    post_images={post.images}
+                    post_imagesdef={post.imagesdef}
+                    post_passStatus={post.passStatus}
+                    post_egmStatus={post.egmStatus}
+                    post_fingerPrintStatus={post.fingerPrintStatus}
+                    post_succesStatus={post.succesStatus}
+                  />
+                ))}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </>
     );
 }
